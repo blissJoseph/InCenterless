@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InCenterless.ViewModels._1.Home;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,14 +16,12 @@ using System.Windows.Shapes;
 
 namespace InCenterless.Views._1.Home
 {
-    /// <summary>
-    /// Interaction logic for MachineConditionPage.xaml
-    /// </summary>
     public partial class MachineConditionPage : Page
     {
         public MachineConditionPage()
         {
             InitializeComponent();
+            this.DataContext = new MachineConditionViewModel(); 
         }
     }
 }

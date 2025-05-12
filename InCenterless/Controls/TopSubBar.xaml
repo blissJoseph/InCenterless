@@ -15,7 +15,7 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <!-- Home Button -->
+        <!-- Button 1 -->
         <Button x:Name="TopSubButton1"
                 Grid.Column="0" 
                    Width="240" Height="40" 
