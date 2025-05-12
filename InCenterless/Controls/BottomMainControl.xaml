@@ -20,7 +20,7 @@
 
         <!-- === Section 1 Title === -->
         <TextBlock Grid.Column="0" Grid.Row="0" 
-                Text="TYPE B"
+                Text="Mode"
                 FontSize="20" FontWeight="Bold"
                 HorizontalAlignment="Center"
                 Margin="20,0,0,0"
@@ -47,30 +47,30 @@
                 </Grid.ColumnDefinitions>
 
                 <!-- Row 0 -->
-                <Button Grid.Row="0" Grid.Column="0" Content="AUTO"  Margin="5"/>
-                <Button Grid.Row="0" Grid.Column="1" Content="SBK"  Margin="5"/>
-                <Button Grid.Row="0" Grid.Column="2" Content="HANDLE"  Margin="5"/>
+                <Button Grid.Row="0" Grid.Column="0" Content="AUTO" FontSize="18"/>
+                <Button Grid.Row="0" Grid.Column="1" Content="SBK" FontSize="18" />
+                <Button Grid.Row="0" Grid.Column="2" Content="HANDLE" FontSize="18" />
 
                 <!-- Row 1 -->
-                <Button Grid.Row="1" Grid.Column="0" Content="MDA"  Margin="5"/>
-                <Button Grid.Row="1" Grid.Column="1" Content="OSP"  Margin="5"/>
-                <Button Grid.Row="1" Grid.Column="2" Content="JOG"  Margin="5"/>
+                <Button Grid.Row="1" Grid.Column="0" Content="MDA" FontSize="18" />
+                <Button Grid.Row="1" Grid.Column="1" Content="OSP" FontSize="18" />
+                <Button Grid.Row="1" Grid.Column="2" Content="JOG" FontSize="18" />
 
                 <!-- Row 2 -->
-                <Button Grid.Row="2" Grid.Column="0" Content="EDIT"  Margin="5"/>
-                <Button Grid.Row="2" Grid.Column="1" Content=""  Margin="5"/>
-                <Button Grid.Row="2" Grid.Column="2" Content=""  Margin="5"/>
+                <Button Grid.Row="2" Grid.Column="0" Content="EDIT" FontSize="18" />
+                <Button Grid.Row="2" Grid.Column="1" Content="MLK" FontSize="18" />
+                <Button Grid.Row="2" Grid.Column="2" Content="RPD" FontSize="18" />
 
                 <!-- Row 3 -->
-                <Button Grid.Row="3" Grid.Column="0" Content="TEACH IN"  Margin="5"/>
-                <Button Grid.Row="3" Grid.Column="1" Content="DRN"  Margin="5"/>
-                <Button Grid.Row="3" Grid.Column="2" Content="REF"  Margin="5"/>
+                <Button Grid.Row="3" Grid.Column="0" Content="TEACH IN" FontSize="18" />
+                <Button Grid.Row="3" Grid.Column="1" Content="DRN" FontSize="18" />
+                <Button Grid.Row="3" Grid.Column="2" Content="REF" FontSize="18" />
             </Grid>
         </Border>
 
         <!-- === Section 2 Title === -->
         <TextBlock Grid.Column="1" Grid.Row="0"
-                Text="TYPE B"
+                Text="Function"
                 FontSize="20" FontWeight="Bold"
                 HorizontalAlignment="Center"
                 Width="245"
@@ -96,30 +96,42 @@
                 </Grid.ColumnDefinitions>
 
                 <!-- Row 0 -->
-                <Button Grid.Row="0" Grid.Column="0" Content="AUTO" Margin="5"/>
-                <Button Grid.Row="0" Grid.Column="1" Content="SBK" Margin="5"/>
-                <Button Grid.Row="0" Grid.Column="2" Content="HANDLE" Margin="5"/>
+                <Button Grid.Row="0" Grid.Column="0"  FontSize="18">
+                    <TextBlock TextAlignment="Center">
+                            G/W
+                            <LineBreak/>
+                            SPINDLE
+                    </TextBlock>
+                </Button>
+                <Button Grid.Row="0" Grid.Column="1" Content=""  FontSize="18"/>
+                <Button Grid.Row="0" Grid.Column="2"  FontSize="18">
+                    <TextBlock TextAlignment="Center">
+                         R/W
+                         <LineBreak/>
+                         SPINDLE
+                    </TextBlock>
+                </Button>
 
                 <!-- Row 1 -->
-                <Button Grid.Row="1" Grid.Column="0" Content="MDA" Margin="5"/>
-                <Button Grid.Row="1" Grid.Column="1" Content="OSP" Margin="5"/>
-                <Button Grid.Row="1" Grid.Column="2" Content="JOG" Margin="5"/>
+                <Button Grid.Row="1" Grid.Column="0" Content=""  FontSize="18"/>
+                <Button Grid.Row="1" Grid.Column="1" Content=""  FontSize="18"/>
+                <Button Grid.Row="1" Grid.Column="2" Content=""  FontSize="18"/>
 
                 <!-- Row 2 -->
-                <Button Grid.Row="2" Grid.Column="0" Content="EDIT" Margin="5"/>
-                <Button Grid.Row="2" Grid.Column="1" Content="" Margin="5"/>
-                <Button Grid.Row="2" Grid.Column="2" Content="" Margin="5"/>
+                <Button Grid.Row="2" Grid.Column="0" Content=""  FontSize="18"/>
+                <Button Grid.Row="2" Grid.Column="1" Content=""  FontSize="18"/>
+                <Button Grid.Row="2" Grid.Column="2" Content=""  FontSize="18"/>
 
                 <!-- Row 3 -->
-                <Button Grid.Row="3" Grid.Column="0" Content="TEACH IN" Margin="5"/>
-                <Button Grid.Row="3" Grid.Column="1" Content="DRN" Margin="5"/>
-                <Button Grid.Row="3" Grid.Column="2" Content="REF" Margin="5"/>
+                <Button Grid.Row="3" Grid.Column="0" Content=""  FontSize="18"/>
+                <Button Grid.Row="3" Grid.Column="1" Content=""  FontSize="18"/>
+                <Button Grid.Row="3" Grid.Column="2" Content=""  FontSize="18"/>
             </Grid>
         </Border>
 
         <!-- === Section 3 Title === -->
         <TextBlock Grid.Column="2" Grid.Row="0"
-                Text="TYPE B"
+                Text="Coolant"
                 FontSize="20" FontWeight="Bold"
                 HorizontalAlignment="Center"
                 Width="245"
@@ -144,26 +156,32 @@
                 </Grid.ColumnDefinitions>
 
                 <!-- Row 0 -->
-                <Button Grid.Row="0" Grid.Column="0" Content="BTN 1"  Margin="5"/>
-                <Button Grid.Row="0" Grid.Column="1" Content="BTN 2"  Margin="5"/>
+                <Button Grid.Row="0" Grid.Column="0" Content="MANU"   FontSize="18"/>
+                <Button Grid.Row="0" Grid.Column="1" Content="AUTO"   FontSize="18"/>
 
                 <!-- Row 1 -->
-                <Button Grid.Row="1" Grid.Column="0" Content="BTN 3"  Margin="5"/>
-                <Button Grid.Row="1" Grid.Column="1" Content="BTN 4"  Margin="5"/>
+                <Button Grid.Row="1" Grid.Column="0" Content="G/W"   FontSize="18"/>
+                <Button Grid.Row="1" Grid.Column="1" Content="R/W"   FontSize="18"/>
 
                 <!-- Row 2 -->
-                <Button Grid.Row="2" Grid.Column="0" Content="BTN 5"  Margin="5"/>
-                <Button Grid.Row="2" Grid.Column="1" Content="BTN 6"  Margin="5"/>
+                <Button Grid.Row="2" Grid.Column="0" Content="DRS"   FontSize="18"/>
+                <Button Grid.Row="2" Grid.Column="1" Content=""   FontSize="18"/>
 
                 <!-- Row 3 -->
-                <Button Grid.Row="3" Grid.Column="0" Content="BTN 7"  Margin="5"/>
-                <Button Grid.Row="3" Grid.Column="1" Content="BTN 8"  Margin="5"/>
+                <Button Grid.Row="3" Grid.Column="0" Content=""   FontSize="18"/>
+                <Button Grid.Row="3" Grid.Column="1"   FontSize="18">
+                    <TextBlock TextAlignment="Center">
+                        NO
+                        <LineBreak/>
+                        CLNT
+                    </TextBlock>
+                </Button>
             </Grid>
         </Border>
 
         <!-- === Section 4 Title === -->
         <TextBlock Grid.Column="3" Grid.Row="0"
-                Text="TYPE B"
+                Text="Axis"
                 FontSize="20" FontWeight="Bold"
                 HorizontalAlignment="Center"
                 Width="245"
@@ -189,24 +207,24 @@
                 </Grid.ColumnDefinitions>
 
                 <!-- Row 0 -->
-                <Button Grid.Row="0" Grid.Column="0" Content="AUTO"  Margin="5"/>
-                <Button Grid.Row="0" Grid.Column="1" Content="SBK"  Margin="5"/>
-                <Button Grid.Row="0" Grid.Column="2" Content="HANDLE"  Margin="5"/>
+                <Button Grid.Row="0" Grid.Column="0" Content=""   FontSize="18"/>
+                <Button Grid.Row="0" Grid.Column="1" Content=""   FontSize="18"/>
+                <Button Grid.Row="0" Grid.Column="2" Content="Z"   FontSize="18"/>
 
                 <!-- Row 1 -->
-                <Button Grid.Row="1" Grid.Column="0" Content="MDA"  Margin="5"/>
-                <Button Grid.Row="1" Grid.Column="1" Content="OSP"  Margin="5"/>
-                <Button Grid.Row="1" Grid.Column="2" Content="JOG"  Margin="5"/>
+                <Button Grid.Row="1" Grid.Column="0" Content="U1"   FontSize="18"/>
+                <Button Grid.Row="1" Grid.Column="1" Content=""   FontSize="18"/>
+                <Button Grid.Row="1" Grid.Column="2" Content="S1"   FontSize="18"/>
 
                 <!-- Row 2 -->
-                <Button Grid.Row="2" Grid.Column="0" Content="EDIT"  Margin="5"/>
-                <Button Grid.Row="2" Grid.Column="1" Content=""  Margin="5"/>
-                <Button Grid.Row="2" Grid.Column="2" Content=""  Margin="5"/>
+                <Button Grid.Row="2" Grid.Column="0" Content="U2"   FontSize="18"/>
+                <Button Grid.Row="2" Grid.Column="1" Content=""   FontSize="18"/>
+                <Button Grid.Row="2" Grid.Column="2" Content="W2"   FontSize="18"/>
 
                 <!-- Row 3 -->
-                <Button Grid.Row="3" Grid.Column="0" Content="TEACH IN"  Margin="5"/>
-                <Button Grid.Row="3" Grid.Column="1" Content="DRN"  Margin="5"/>
-                <Button Grid.Row="3" Grid.Column="2" Content="REF"  Margin="5"/>
+                <Button Grid.Row="3" Grid.Column="0" Content="-"   FontSize="18"/>
+                <Button Grid.Row="3" Grid.Column="1" Content="100%"   FontSize="18"/>
+                <Button Grid.Row="3" Grid.Column="2" Content="+"   FontSize="18"/>
             </Grid>
         </Border>
     </Grid>

@@ -4,11 +4,98 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:InCenterless.Views._2.Mode"
+      xmlns:controls="clr-namespace:InCenterless.Controls"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="1920" d:DesignWidth="1080"
+      Background="White"
       Title="SemiAutoPage">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <!-- Section 1 -->
+            <RowDefinition Height="100"/>
+            <!-- Section 2 -->
+            <RowDefinition Height="60"/>
+            <!-- Section 3 -->
+            <RowDefinition Height="820"/>
+            <!-- Section 4 -->
+            <RowDefinition Height="440"/>
+            <!-- Section 5 -->
+            <RowDefinition Height="400"/>
+            <!-- Section 6 -->
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+
+        <!-- Section 1 layout container -->
+        <controls:TopBar Grid.Row="0"/>
+
+        <!-- Section 2 layout container -->
+        <Grid Grid.Row="1" Margin="15,0,15,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Button 1 -->
+            <Button x:Name="TopSubButton1"
+                 Grid.Column="0" 
+                 Width="240" Height="40" 
+                 Content="Cycle Monitor"  
+                 HorizontalAlignment="Left"
+                 FontSize="18"
+                 Foreground="White"
+                 Background="#7F7F7F"/>
+
+            <!-- Button 2 -->
+            <Button x:Name="TopSubButton2"
+                 Grid.Column="1"
+                 Width="240" Height="40" 
+                 Content="Semi Auto"
+                 FontSize="18"
+                 HorizontalAlignment="Left"
+                 Foreground="White"
+                 Background="#7F7F7F"/>
+
+            <!-- Button 3 -->
+            <Button x:Name="TopSubButton3"
+                 Grid.Column="2" 
+                 Width="240" Height="40" 
+                 Content="Manual" 
+                 FontSize="18"
+                 HorizontalAlignment="Left"
+                 Foreground="White"
+                 Background="#376092"/>
+
+            <!-- Button 4 -->
+            <Button x:Name="TopSubButton4"
+                 Grid.Column="3" 
+                 Width="240" Height="40" 
+                 Content="" 
+                 FontSize="18"
+                 HorizontalAlignment="Left" 
+                 Foreground="White"
+                 Background="#7F7F7F"/>
+        </Grid>
+
+        <!-- Section 3 layout container -->
+        <Grid Grid.Row="2">
+
+
+        </Grid>
+
+        <!-- Section 4 layout container -->
+        <Grid Grid.Row="3">
+
+
+        </Grid>
+
+        <!-- Section 5 layout container -->
+        <controls:BottomMainControl Grid.Row="4"/>
+
+        <!-- Section 6 layout container -->
+        <controls:BottomSubControl Grid.Row="5"/>
+
     </Grid>
 </Page>

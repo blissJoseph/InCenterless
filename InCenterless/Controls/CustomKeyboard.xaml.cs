@@ -1,5 +1,4 @@
-﻿using InCenterless.ViewModels._1.Home;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,14 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace InCenterless.Views._1.Home
+namespace InCenterless.Controls
 {
-    public partial class MachineConditionPage : Page
+    /// <summary>
+    /// Interaction logic for CustomKeyboard.xaml
+    /// </summary>
+    public partial class CustomKeyboard : UserControl
     {
-        public MachineConditionPage()
+        public CustomKeyboard()
         {
             InitializeComponent();
-            this.DataContext = new MachineConditionViewModel(); 
         }
     }
 }
