@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using InCenterless.Views._1.Home;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -19,6 +20,8 @@ namespace InCenterless
         public MainWindow()
         {
             InitializeComponent();
+            MainFrame.Navigate(new MachineConditionPage());
+
         }
     }
 }

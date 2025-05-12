@@ -4,11 +4,70 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:InCenterless.Views._1.Home"
+
       mc:Ignorable="d" 
       d:DesignHeight="1920" d:DesignWidth="1080"
+      Background="White"
       Title="MachineConditionPage">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <!-- Section 1 -->
+            <RowDefinition Height="100"/>
+            <!-- Section 2 -->
+            <RowDefinition Height="60"/>
+            <!-- Section 3 -->
+            <RowDefinition Height="820"/>
+            <!-- Section 4 -->
+            <RowDefinition Height="440"/>
+            <!-- Section 5 -->
+            <RowDefinition Height="400"/>
+            <!-- Section 6 -->
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+
+        <!-- Section 1 layout container -->
+
+
+        <!-- Section 2 layout container -->
+        <Grid Grid.Row="1" Margin="15,0,15,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Home Button -->
+            <Button Grid.Column="0" Width="240" Height="40" Content="1"  HorizontalAlignment="Left"/>
+
+            <!-- Button 2 -->
+            <Button Grid.Column="1" Width="240" Height="40" Content="2" HorizontalAlignment="Left"/>
+
+            <!-- Button 3 -->
+            <Button Grid.Column="2" Width="240" Height="40" Content="3" HorizontalAlignment="Left"/>
+
+            <!-- Button 4 -->
+            <Button Grid.Column="3" Width="240" Height="40" Content="4" HorizontalAlignment="Left"/>
+        </Grid>
+
+        <!-- Section 3 layout container -->
+        <Grid Grid.Row="2">
+
+
+        </Grid>
+
+        <!-- Section 4 layout container -->
+        <Grid Grid.Row="3">
+
+
+        </Grid>
+
+        <!-- Section 5 layout container -->
+
+        <!-- Section 6 layout container -->
+
+
+
     </Grid>
 </Page>
