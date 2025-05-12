@@ -1,0 +1,55 @@
+InCenterless
+│
+├── Models   
+│
+├── ViewModels
+│   ├── MainViewModel.cs
+│   ├── Home
+│   │   ├── JobListViewModel.cs
+│   │   └── MachineConditionViewModel.cs
+│   ├── Mode
+│   │   ├── CycleMonitorViewModel.cs
+│   │   ├──  ManualViewModel.cs
+│   │   └── SemiAutoViewModel.cs 
+│   ├── Setting
+│   │   ├── CycleDataViewModel.cs
+│   │   ├── DressingDataViewModel.cs
+│   │   ├── TeachingDataViewModel.cs 
+│   │   └── UtilityDataViewModel.cs 
+│   └── Maintenance
+│       ├── CycleOperationParameterViewModel.cs
+│       ├── ReferenceViewModel.cs 
+│       └── SpindleParameterViewModel.cs
+│
+├── Views
+│   ├── Home
+│   │   ├── JobListPage.xaml 
+│   │   └── MachineConditionPage.xaml
+│   ├── Mode
+│   │   ├── CycleMonitorPage.xaml
+│   │   ├── ManualPage.xaml
+│   │   └── SemiAutoPage.xaml 
+│   ├── Setting
+│   │   ├── CycleDataPage.xaml
+│   │   ├── DressingDataPage.xaml
+│   │   ├── TeachingDataPage.xaml
+│   │   └── UtilityDataPage.xaml 
+│   └── Maintenance
+│       ├── CycleOperationPage.xaml
+│       ├── ReferencePage.xaml
+│       └── SpindlePage.xaml
+├── Controls
+│   ├── TopBar.xaml
+│   ├── TopSubBar.xaml
+│   ├── BottomSubControl.xaml
+│   └── BottomMainControl.xaml 
+├── Services
+│   └── NavigationService.cs 
+│
+├── Helpers
+│   └── RelayCommand.cs 등
+│
+├── Resources
+│   └── 이미지, 스타일, 문자열 리소스 등
+│
+└── App.xaml

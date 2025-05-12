@@ -17,7 +17,7 @@
 
         <!-- Logo -->
         <Button  Grid.Column="0" Width="300" Height="80" Margin="20,0,0,0" Click="MinimizeButton">
-            <Image Source="/Resources/Images/ORSKOREA_.png" Stretch="Fill"/>
+            <Image Source="pack://application:,,,/Resources/Images/ORSKOREA_.png" Stretch="Fill"/>
         </Button>
 
 
@@ -29,16 +29,16 @@
                  Grid.Column="2">
 
             <Button Width="80" Height="80" Margin="0,0,20,0" Click="HomeButton">
-                <Image Source="/Resources/Images/HomeOFF.png" Stretch="Fill"/>
+                <Image Source="pack://application:,,,/Resources/Images/HomeOFF.png" Stretch="Fill"/>
             </Button>
             <Button Width="80" Height="80" Margin="0,0,20,0" Click="ModeButton">
-                <Image Source="/Resources/Images/ModeOFF.png" Stretch="Fill"/>
+                <Image Source="pack://application:,,,/Resources/Images/ModeOFF.png" Stretch="Fill"/>
             </Button>
             <Button Width="80" Height="80" Margin="0,0,20,0" Click="SetButton">
-                <Image Source="/Resources/Images/SetOFF.png" Stretch="Fill"/>
+                <Image Source="pack://application:,,,/Resources/Images/SetOFF.png" Stretch="Fill"/>
             </Button>
             <Button Width="80" Height="80" Click="MaintButton">
-                <Image Source="/Resources/Images/MaintenanceOFF.png" Stretch="Fill"/>
+                <Image Source="pack://application:,,,/Resources/Images/MaintenanceOFF.png" Stretch="Fill"/>
             </Button>
         </StackPanel>
 

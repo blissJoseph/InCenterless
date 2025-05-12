@@ -9,9 +9,36 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\Images\HomeOFF.png" />
+    <None Remove="Resources\Images\HomeON.png" />
+    <None Remove="Resources\Images\JobOFF.png" />
+    <None Remove="Resources\Images\JobON.png" />
+    <None Remove="Resources\Images\MaintenanceOFF.png" />
+    <None Remove="Resources\Images\MaintenanceON.png" />
+    <None Remove="Resources\Images\ModeOFF.png" />
+    <None Remove="Resources\Images\ModeON.png" />
+    <None Remove="Resources\Images\ORSKOREA_.png" />
+    <None Remove="Resources\Images\SetOFF.png" />
+    <None Remove="Resources\Images\SetON.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Models\" />
-    <Folder Include="Resources\Images\" />
     <Folder Include="Resources\Fonts\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Images\HomeOFF.png" />
+    <Resource Include="Resources\Images\HomeON.png" />
+    <Resource Include="Resources\Images\JobOFF.png" />
+    <Resource Include="Resources\Images\JobON.png" />
+    <Resource Include="Resources\Images\MaintenanceOFF.png" />
+    <Resource Include="Resources\Images\MaintenanceON.png" />
+    <Resource Include="Resources\Images\ModeOFF.png" />
+    <Resource Include="Resources\Images\ModeON.png" />
+    <Resource Include="Resources\Images\ORSKOREA_.png" />
+    <Resource Include="Resources\Images\SetOFF.png" />
+    <Resource Include="Resources\Images\SetON.png" />
   </ItemGroup>
 
 </Project>

@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:InCenterless.Views._1.Home"
+      xmlns:controls="clr-namespace:InCenterless.Controls"
 
       mc:Ignorable="d" 
       d:DesignHeight="1920" d:DesignWidth="1080"
@@ -27,8 +28,8 @@
         </Grid.RowDefinitions>
 
         <!-- Section 1 layout container -->
-
-
+        <controls:TopBar Grid.Row="0"/>
+        
         <!-- Section 2 layout container -->
         <Grid Grid.Row="1" Margin="15,0,15,0">
             <Grid.ColumnDefinitions>

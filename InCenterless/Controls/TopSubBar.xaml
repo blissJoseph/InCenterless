@@ -1,0 +1,59 @@
+﻿<UserControl x:Class="InCenterless.Controls.TopSubBar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:InCenterless.Controls"
+             mc:Ignorable="d" 
+             Height="Auto">
+    
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Home Button -->
+        <Button x:Name="TopSubButton1"
+                Grid.Column="0" 
+                   Width="240" Height="40" 
+                   Content=""  
+                   HorizontalAlignment="Left"
+                   FontSize="18"
+                   Foreground="White"
+                   Background="#7F7F7F"/>
+
+        <!-- Button 2 -->
+        <Button x:Name="TopSubButton2"
+                Grid.Column="1"
+                   Width="240" Height="40" 
+                   Content=""
+                   FontSize="18"
+                   HorizontalAlignment="Left"
+                   Foreground="White"
+                   Background="#7F7F7F"/>
+
+        <!-- Button 3 -->
+        <Button x:Name="TopSubButton3"
+                Grid.Column="2" 
+                   Width="240" Height="40" 
+                   Content="" 
+                   FontSize="18"
+                   HorizontalAlignment="Left"
+                   Foreground="White"
+                   Background="#7F7F7F"/>
+
+
+        <!-- Button 4 -->
+        <Button x:Name="TopSubButton4"
+                Grid.Column="3" 
+                   Width="240" Height="40" 
+                   Content="" 
+                   FontSize="18"
+                   HorizontalAlignment="Left" 
+                   Foreground="White"
+                   Background="#7F7F7F"/>
+    </Grid>
+</UserControl>
