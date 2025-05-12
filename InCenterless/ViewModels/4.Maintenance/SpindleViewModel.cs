@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InCenterless.ViewModels._4.Maintenance
 {
-    internal class SpindleParameterViewModel
+    internal class SpindleViewModel
     {
     }
 }

@@ -1,0 +1,213 @@
+﻿<UserControl x:Class="InCenterless.Controls.BottomMainControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:InCenterless.Controls"
+             mc:Ignorable="d" 
+          Height="Auto">
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="0.7*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- === Section 1 Title === -->
+        <TextBlock Grid.Column="0" Grid.Row="0" 
+                Text="TYPE B"
+                FontSize="20" FontWeight="Bold"
+                HorizontalAlignment="Center"
+                Margin="20,0,0,0"
+                Width="245"
+                TextAlignment="Center"/>
+
+        <!-- === Section 1 Square with 4x3 Button Layout === -->
+        <Border Grid.Column="0" Grid.Row="1"
+             Width="260" Height="350"
+             Margin="10,0,30,0"
+             Background="#FFEFEFEF"
+             Padding="10">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Row 0 -->
+                <Button Grid.Row="0" Grid.Column="0" Content="AUTO"  Margin="5"/>
+                <Button Grid.Row="0" Grid.Column="1" Content="SBK"  Margin="5"/>
+                <Button Grid.Row="0" Grid.Column="2" Content="HANDLE"  Margin="5"/>
+
+                <!-- Row 1 -->
+                <Button Grid.Row="1" Grid.Column="0" Content="MDA"  Margin="5"/>
+                <Button Grid.Row="1" Grid.Column="1" Content="OSP"  Margin="5"/>
+                <Button Grid.Row="1" Grid.Column="2" Content="JOG"  Margin="5"/>
+
+                <!-- Row 2 -->
+                <Button Grid.Row="2" Grid.Column="0" Content="EDIT"  Margin="5"/>
+                <Button Grid.Row="2" Grid.Column="1" Content=""  Margin="5"/>
+                <Button Grid.Row="2" Grid.Column="2" Content=""  Margin="5"/>
+
+                <!-- Row 3 -->
+                <Button Grid.Row="3" Grid.Column="0" Content="TEACH IN"  Margin="5"/>
+                <Button Grid.Row="3" Grid.Column="1" Content="DRN"  Margin="5"/>
+                <Button Grid.Row="3" Grid.Column="2" Content="REF"  Margin="5"/>
+            </Grid>
+        </Border>
+
+        <!-- === Section 2 Title === -->
+        <TextBlock Grid.Column="1" Grid.Row="0"
+                Text="TYPE B"
+                FontSize="20" FontWeight="Bold"
+                HorizontalAlignment="Center"
+                Width="245"
+                TextAlignment="Center"/>
+
+        <!-- === Section 2 Square with 4x3 Button Layout === -->
+        <Border Grid.Column="1" Grid.Row="1"
+             Width="260" Height="350"
+             Margin="0,0,0,0"
+             Background="#FFEFEFEF"
+             Padding="10">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Row 0 -->
+                <Button Grid.Row="0" Grid.Column="0" Content="AUTO" Margin="5"/>
+                <Button Grid.Row="0" Grid.Column="1" Content="SBK" Margin="5"/>
+                <Button Grid.Row="0" Grid.Column="2" Content="HANDLE" Margin="5"/>
+
+                <!-- Row 1 -->
+                <Button Grid.Row="1" Grid.Column="0" Content="MDA" Margin="5"/>
+                <Button Grid.Row="1" Grid.Column="1" Content="OSP" Margin="5"/>
+                <Button Grid.Row="1" Grid.Column="2" Content="JOG" Margin="5"/>
+
+                <!-- Row 2 -->
+                <Button Grid.Row="2" Grid.Column="0" Content="EDIT" Margin="5"/>
+                <Button Grid.Row="2" Grid.Column="1" Content="" Margin="5"/>
+                <Button Grid.Row="2" Grid.Column="2" Content="" Margin="5"/>
+
+                <!-- Row 3 -->
+                <Button Grid.Row="3" Grid.Column="0" Content="TEACH IN" Margin="5"/>
+                <Button Grid.Row="3" Grid.Column="1" Content="DRN" Margin="5"/>
+                <Button Grid.Row="3" Grid.Column="2" Content="REF" Margin="5"/>
+            </Grid>
+        </Border>
+
+        <!-- === Section 3 Title === -->
+        <TextBlock Grid.Column="2" Grid.Row="0"
+                Text="TYPE B"
+                FontSize="20" FontWeight="Bold"
+                HorizontalAlignment="Center"
+                Width="245"
+                TextAlignment="Center"/>
+
+        <!-- === Section 3 Square with 4x2 Button Layout === -->
+        <Border Grid.Column="2" Grid.Row="1"
+             Width="180" Height="350"
+             Margin="0,0,0,0"
+             Background="#FFEFEFEF"
+             Padding="10">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Row 0 -->
+                <Button Grid.Row="0" Grid.Column="0" Content="BTN 1"  Margin="5"/>
+                <Button Grid.Row="0" Grid.Column="1" Content="BTN 2"  Margin="5"/>
+
+                <!-- Row 1 -->
+                <Button Grid.Row="1" Grid.Column="0" Content="BTN 3"  Margin="5"/>
+                <Button Grid.Row="1" Grid.Column="1" Content="BTN 4"  Margin="5"/>
+
+                <!-- Row 2 -->
+                <Button Grid.Row="2" Grid.Column="0" Content="BTN 5"  Margin="5"/>
+                <Button Grid.Row="2" Grid.Column="1" Content="BTN 6"  Margin="5"/>
+
+                <!-- Row 3 -->
+                <Button Grid.Row="3" Grid.Column="0" Content="BTN 7"  Margin="5"/>
+                <Button Grid.Row="3" Grid.Column="1" Content="BTN 8"  Margin="5"/>
+            </Grid>
+        </Border>
+
+        <!-- === Section 4 Title === -->
+        <TextBlock Grid.Column="3" Grid.Row="0"
+                Text="TYPE B"
+                FontSize="20" FontWeight="Bold"
+                HorizontalAlignment="Center"
+                Width="245"
+                TextAlignment="Center"/>
+
+        <!-- === Section 4 Square with 4x3 Button Layout === -->
+        <Border Grid.Column="3" Grid.Row="1"
+             Width="260" Height="350"
+             Margin="0,0,20,0"
+             Background="#FFEFEFEF"
+             Padding="10">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Row 0 -->
+                <Button Grid.Row="0" Grid.Column="0" Content="AUTO"  Margin="5"/>
+                <Button Grid.Row="0" Grid.Column="1" Content="SBK"  Margin="5"/>
+                <Button Grid.Row="0" Grid.Column="2" Content="HANDLE"  Margin="5"/>
+
+                <!-- Row 1 -->
+                <Button Grid.Row="1" Grid.Column="0" Content="MDA"  Margin="5"/>
+                <Button Grid.Row="1" Grid.Column="1" Content="OSP"  Margin="5"/>
+                <Button Grid.Row="1" Grid.Column="2" Content="JOG"  Margin="5"/>
+
+                <!-- Row 2 -->
+                <Button Grid.Row="2" Grid.Column="0" Content="EDIT"  Margin="5"/>
+                <Button Grid.Row="2" Grid.Column="1" Content=""  Margin="5"/>
+                <Button Grid.Row="2" Grid.Column="2" Content=""  Margin="5"/>
+
+                <!-- Row 3 -->
+                <Button Grid.Row="3" Grid.Column="0" Content="TEACH IN"  Margin="5"/>
+                <Button Grid.Row="3" Grid.Column="1" Content="DRN"  Margin="5"/>
+                <Button Grid.Row="3" Grid.Column="2" Content="REF"  Margin="5"/>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

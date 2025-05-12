@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace InCenterless.Views._1.Home
+namespace InCenterless.Views._4.Maintenance
 {
     /// <summary>
-    /// Interaction logic for HomePage.xaml
+    /// Interaction logic for SpindlePage.xaml
     /// </summary>
-    public partial class HomePage : Page
+    public partial class SpindlePage : Page
     {
-        public HomePage()
+        public SpindlePage()
         {
             InitializeComponent();
         }

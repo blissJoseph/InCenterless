@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace InCenterless.Views._4.Maintenance
 {
     /// <summary>
-    /// Interaction logic for BlankPage.xaml
+    /// Interaction logic for CyclePage.xaml
     /// </summary>
-    public partial class BlankPage : Page
+    public partial class CyclePage : Page
     {
-        public BlankPage()
+        public CyclePage()
         {
             InitializeComponent();
         }

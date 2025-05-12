@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace InCenterless.Views._4.Maintenance
+namespace InCenterless.Controls
 {
     /// <summary>
-    /// Interaction logic for SpindleParameterPage.xaml
+    /// Interaction logic for BottomMainControl.xaml
     /// </summary>
-    public partial class SpindleParameterPage : Page
+    public partial class BottomMainControl : UserControl
     {
-        public SpindleParameterPage()
+        public BottomMainControl()
         {
             InitializeComponent();
         }

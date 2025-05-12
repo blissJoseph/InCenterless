@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace InCenterless.Views._1.Home
+namespace InCenterless.Controls
 {
     /// <summary>
-    /// Interaction logic for Blank2Page.xaml
+    /// Interaction logic for BottomSubControl.xaml
     /// </summary>
-    public partial class Blank2Page : Page
+    public partial class BottomSubControl : UserControl
     {
-        public Blank2Page()
+        public BottomSubControl()
         {
             InitializeComponent();
         }
