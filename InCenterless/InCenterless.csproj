@@ -24,7 +24,13 @@
 
   <ItemGroup>
     <Folder Include="Models\" />
+    <Folder Include="CertificateStores\" />
     <Folder Include="Resources\Fonts\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="OPCFoundation.NetStandard.Opc.Ua" Version="1.5.376.213" />
+    <PackageReference Include="OPCFoundation.NetStandard.Opc.Ua.Client" Version="1.5.376.213" />
   </ItemGroup>
 
   <ItemGroup>

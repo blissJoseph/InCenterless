@@ -5,10 +5,18 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:InCenterless.Views._1.Home"
       xmlns:controls="clr-namespace:InCenterless.Controls"
+      xmlns:vm="clr-namespace:InCenterless.ViewModels._1.Home"
       mc:Ignorable="d" 
       d:DesignHeight="1920" d:DesignWidth="1080"
       Background="White"
       Title="MachineConditionPage">
+
+    <!-- ViewModel 바인딩 -->
+    <Page.DataContext>
+        <vm:MachineConditionViewModel/>
+    </Page.DataContext>
+
+
 
     <Grid>
         <Grid.RowDefinitions>
@@ -81,7 +89,11 @@
         
         <!-- Section 3 layout container -->
         <Grid Grid.Row="2">
-
+            <TextBlock Text="{Binding ConditionValue}" 
+                   FontSize="36" 
+                   Foreground="Lime" 
+                   VerticalAlignment="Top" 
+                   HorizontalAlignment="Left"/>
 
         </Grid>
 
