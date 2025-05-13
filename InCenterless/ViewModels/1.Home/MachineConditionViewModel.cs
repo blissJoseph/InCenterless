@@ -5,59 +5,109 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
-
 using InCenterless.Services;
+
+using System.Threading.Tasks;
+using System.Windows.Input;
+using InCenterless.Helpers;
+using Opc.Ua.Client;
+using Opc.Ua;
 
 namespace InCenterless.ViewModels._1.Home
 {
     public class MachineConditionViewModel : INotifyPropertyChanged
     {
-        private string _conditionValue;
+        private const string NodeId = "ns=2;s=/Channel/Parameter/R";
 
-        // 바인딩될 속성
-        public string ConditionValue
+        private string _readValue;
+        public string ReadValue
         {
-            get => _conditionValue;
-            set { _conditionValue = value; OnPropertyChanged(); }
+            get => _readValue;
+            set
+            {
+                if (_readValue != value)
+                {
+                    _readValue = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+        private string _writeValue;
+        public string WriteValue
+        {
+            get => _writeValue;
+            set
+            {
+                if (_writeValue != value)
+                {
+                    _writeValue = value;
+                    OnPropertyChanged();
+                    _ = WriteToServerAsync(value); // 값 변경 시 서버에 자동 쓰기
+                }
+            }
         }
 
-        // 생성자에서 데이터 로드 시작
         public MachineConditionViewModel()
         {
-            LoadDataAsync();
+            InitializeAsync();
         }
 
-        // OPC UA에서 데이터 받아오기 (비동기)
-        private async Task LoadDataAsync()
+        /// <summary>
+        /// OPC UA 연결 및 구독 초기화
+        /// </summary>
+        private async void InitializeAsync()
         {
-            try
+            var client = OpcUaClientService.Instance;
+
+            // OPC 서버 연결
+            bool connected = await client.ConnectAsync();
+            if (!connected)
             {
-                var client = OpcUaClientService.Instance;
-
-                // 연결 시도
-                bool connected = await client.ConnectAsync();
-
-                if (connected)
-                {
-                    // 정상 연결 후 데이터 요청
-                    ConditionValue = await client.ReadNodeValueAsync("ns=2;s=/Channel/Parameter/R");
-                }
-                else
-                {
-                    // 연결 실패 시 사용자에게 안내
-                    ConditionValue = "🔌 서버 연결 실패 (Check IP / 인증서 / 계정)";
-                }
+                ReadValue = "서버 연결 실패";
+                return;
             }
-            catch (Exception ex)
+
+            // 서버로부터 값 구독 (10ms 단위)
+            client.SubscribeToNode(NodeId, OnDataChanged, 10);
+        }
+
+
+        /// <summary>
+        /// 서버 값 변경 시 호출되는 콜백
+        /// </summary>
+        private void OnDataChanged(MonitoredItem item, MonitoredItemNotificationEventArgs e)
+        {
+            var notification = e.NotificationValue as MonitoredItemNotification;
+            if (notification?.Value?.Value != null)
             {
-                // 예외 발생 시 예외 메시지를 함께 출력
-                ConditionValue = $"❗ 오류 발생: {ex.Message}";
+                // 읽은 값을 ViewModel 속성에 반영
+                ReadValue = notification.Value.Value.ToString();
             }
         }
 
-        // MVVM 바인딩용 이벤트 처리
+        /// <summary>
+        /// 서버에 값 쓰기 (텍스트 값)
+        /// </summary>
+        private async Task WriteToServerAsync(string value)
+        {
+            var client = OpcUaClientService.Instance;
+
+            if (!client.IsConnected) return;
+
+            bool success = await client.WriteNodeValueAsync(NodeId, value);
+
+            if (!success)
+            {
+                // 쓰기 실패 시 표시 (선택 사항)
+                ReadValue = "쓰기 실패";
+            }
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged([CallerMemberName] string name = null)
             => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+
+
     }
+
 }

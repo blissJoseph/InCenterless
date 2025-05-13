@@ -16,9 +16,11 @@ namespace InCenterless.Services
         private static OpcUaClientService _instance;
         private static readonly object _lock = new object();
         private Session _session;
+        private Subscription _subscription;
 
         private OpcUaClientService() { }
 
+        // 싱글톤 인스턴스
         public static OpcUaClientService Instance
         {
             get
@@ -31,13 +33,14 @@ namespace InCenterless.Services
         }
 
         /// <summary>
-        /// OPC UA 서버에 비동기로 연결
+        /// OPC UA 서버에 비동기 연결
         /// </summary>
         public async Task<bool> ConnectAsync()
         {
             if (_session != null && _session.Connected)
                 return true;
 
+            // 클라이언트 설정
             var config = new ApplicationConfiguration
             {
                 ApplicationName = "CenterlessClient",
@@ -47,18 +50,18 @@ namespace InCenterless.Services
                     ApplicationCertificate = new CertificateIdentifier
                     {
                         StoreType = "Directory",
-                        StorePath = "CertificateStores/MachineDefault", // 클라이언트 인증서 저장
+                        StorePath = "CertificateStores/MachineDefault",
                         SubjectName = "CenterlessClient"
                     },
                     TrustedPeerCertificates = new CertificateTrustList
                     {
                         StoreType = "Directory",
-                        StorePath = "CertificateStores/UA Applications"  // 서버 인증서 저장
+                        StorePath = "CertificateStores/UA Applications"
                     },
                     TrustedIssuerCertificates = new CertificateTrustList
                     {
                         StoreType = "Directory",
-                        StorePath = "CertificateStores/UA Certificate Authorities"  // 서버 인증서 발급자
+                        StorePath = "CertificateStores/UA Certificate Authorities"
                     },
                     RejectedCertificateStore = new CertificateTrustList
                     {
@@ -81,7 +84,7 @@ namespace InCenterless.Services
 
             await config.Validate(ApplicationType.Client);
 
-            // 인증서 자동 수락 처리
+            // 인증서 자동 수락
             if (config.SecurityConfiguration.AutoAcceptUntrustedCertificates)
             {
                 config.CertificateValidator.CertificateValidation += (_, e) =>
@@ -90,7 +93,7 @@ namespace InCenterless.Services
                 };
             }
 
-            // 애플리케이션 인증서 유효성 검사 및 생성
+            // 인증서 생성 또는 확인
             var app = new ApplicationInstance
             {
                 ApplicationName = "CenterlessClient",
@@ -99,13 +102,13 @@ namespace InCenterless.Services
 
             await app.CheckApplicationInstanceCertificate(true, 0);
 
-            // 서버 엔드포인트 지정
+            // 엔드포인트 설정 (보안 사용)
             string endpointUrl = "opc.tcp://192.168.214.1:4840";
-            var endpoint = CoreClientUtils.SelectEndpoint(endpointUrl, true); // 보안 강제
+            var endpoint = CoreClientUtils.SelectEndpoint(endpointUrl, true);
             var endpointConfig = EndpointConfiguration.Create(config);
             var selectedEndpoint = new ConfiguredEndpoint(null, endpoint, endpointConfig);
 
-            // 사용자 로그인 정보
+            // 사용자 로그인 정보 (Secure)
             var identity = new UserIdentity("TEST", "testtest");
 
             // 세션 생성
@@ -123,7 +126,7 @@ namespace InCenterless.Services
         }
 
         /// <summary>
-        /// 노드 ID 기반 값 읽기
+        /// 노드 ID로부터 현재 값을 읽음
         /// </summary>
         public async Task<string> ReadNodeValueAsync(string nodeId)
         {
@@ -135,7 +138,70 @@ namespace InCenterless.Services
         }
 
         /// <summary>
-        /// 세션 연결 상태 반환
+        /// 노드에 값 쓰기
+        /// </summary>
+        public async Task<bool> WriteNodeValueAsync(string nodeId, object value)
+        {
+            if (_session == null || !_session.Connected)
+                throw new InvalidOperationException("OPC UA session is not connected.");
+
+            return await Task.Run(() =>
+            {
+                var nodeToWrite = new WriteValue
+                {
+                    NodeId = nodeId,
+                    AttributeId = Attributes.Value,
+                    Value = new DataValue(new Variant(value))
+                };
+
+                // ✅ out 변수 선언
+                StatusCodeCollection statusCodes;
+                DiagnosticInfoCollection diagnosticInfos;
+
+                // ✅ 동기 Write 호출 (Task.Run 안에서)
+                _session.Write(
+                    null,
+                    new WriteValueCollection { nodeToWrite },
+                    out statusCodes,
+                    out diagnosticInfos
+                );
+
+                return StatusCode.IsGood(statusCodes[0]);
+            });
+        }
+
+        /// <summary>
+        /// 노드 변경을 구독 (샘플링 간격 단위: ms)
+        /// </summary>
+        public void SubscribeToNode(string nodeId, MonitoredItemNotificationEventHandler handler, int samplingInterval = 1000)
+        {
+            if (_session == null || !_session.Connected)
+                throw new InvalidOperationException("OPC UA session is not connected.");
+
+            // 기존 구독 해제
+            _subscription?.Delete(true);
+            _subscription = new Subscription(_session.DefaultSubscription)
+            {
+                PublishingInterval = samplingInterval
+            };
+            _session.AddSubscription(_subscription);
+            _subscription.Create();
+
+            // 감시 항목 생성
+            var item = new MonitoredItem(_subscription.DefaultItem)
+            {
+                DisplayName = "SubscribedNode",
+                StartNodeId = nodeId,
+                SamplingInterval = samplingInterval
+            };
+            item.Notification += handler;
+
+            _subscription.AddItem(item);
+            _subscription.ApplyChanges();
+        }
+
+        /// <summary>
+        /// 현재 연결 여부
         /// </summary>
         public bool IsConnected => _session != null && _session.Connected;
 
@@ -147,6 +213,7 @@ namespace InCenterless.Services
             _session?.Close();
             _session?.Dispose();
             _session = null;
+            _subscription = null;
         }
     }
 }
